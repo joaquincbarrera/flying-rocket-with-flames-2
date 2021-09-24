@@ -1,5 +1,12 @@
+document.addEventListener('mousemove', (e) => {
+  var rocket = document.querySelector('.rocket');
+  rocket.style.left = e.offsetX + 'px';
+  rocket.style.top = e.offsetY + 'px';
+});
+
 function stars() {
   let count = 50;
+  let speed = 100;
   let scene = document.querySelector('.scene');
   let i = 0;
   while (i < count) {
@@ -7,7 +14,7 @@ function stars() {
     let x = Math.floor(Math.random() * window.innerWidth);
 
     let duration = Math.random() * 1;
-    let h = Math.random() * 100;
+    let h = Math.random() * speed;
 
     star.style.left = x + 'px';
     star.style.width = 1 + 'px';

@@ -14,17 +14,19 @@
   align-items: center;
 }
 .scene .rocket {
-  position: relative;
+  position: absolute;
+  pointer-events: none;
+  transition: 0.1s;
   animation: animateRocket 0.2s ease infinite;
 }
 
 @keyframes animateRocket {
   0%,
   100% {
-    transform: translateY(-2px);
+    transform: translateY(-52px) translate(-50%);
   }
   50% {
-    transform: translateY(2px);
+    transform: translateY(-48px) translate(-50%);
   }
 }
 .scene .rocket::before {
@@ -63,4 +65,12 @@
   100% {
     transform: translateY(200vh);
   }
+}
+
+.scene:active .rocket::before,
+.scene:active .rocket::after {
+  background: linear-gradient(#d4065c, transparent);
+  bottom: -300px;
+  height: 300px;
+  filter: blur(2px);
 }
