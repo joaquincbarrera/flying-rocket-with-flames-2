@@ -16,6 +16,9 @@
 .scene .rocket {
   position: absolute;
   pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   transition: 0.1s;
   animation: animateRocket 0.2s ease infinite;
 }
